@@ -34,4 +34,8 @@ public class Transaction {
     private User reciever;
 
     private LocalDateTime timestamp;
+
+    public Transaction (){
+
+    }
 }
