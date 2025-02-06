@@ -3,10 +3,7 @@ package com.picpay_simple.picpaysimple.domain.transaction;
 
 import com.picpay_simple.picpaysimple.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -17,6 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@NoArgsConstructor
 public class Transaction {
 
     @Id
@@ -37,5 +35,17 @@ public class Transaction {
 
     public Transaction (){
 
+    }
+
+    public void setAmount(BigDecimal value) {
+    }
+
+    public void setSender(User sender) {
+    }
+
+    public void setReceiver(User receiver) {
+    }
+
+    public void setTimeStamp(LocalDateTime now) {
     }
 }

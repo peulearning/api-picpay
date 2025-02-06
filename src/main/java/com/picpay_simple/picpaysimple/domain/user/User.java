@@ -54,4 +54,8 @@ public class User {
     public BigDecimal getBalance(){
         return balance;
     }
+
+    public void setBalance(BigDecimal subtract) {
+
+    }
 }
