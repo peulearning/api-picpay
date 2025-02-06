@@ -1,6 +1,7 @@
 package com.picpay_simple.picpaysimple.domain.user;
 
 
+import com.picpay_simple.picpaysimple.dtos.UserDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -38,8 +39,13 @@ public class User {
     private UserType userType;
 
 
-    public User(){
-
+    public User(UserDTO data){
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.balance = data.balance();
+        this.password = data.password();
+        this.email = data.email();
+        this.userType = data.userType();
     }
 
     // Adicionando manualmente os getters e setters

@@ -2,12 +2,15 @@ package com.picpay_simple.picpaysimple.services;
 
 import com.picpay_simple.picpaysimple.domain.user.User;
 import com.picpay_simple.picpaysimple.domain.user.UserType;
+import com.picpay_simple.picpaysimple.dtos.UserDTO;
 import com.picpay_simple.picpaysimple.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,5 +38,15 @@ public class UserService {
     // Salva um novo usuário
     public User saveUser(User user) {
         return repository.save(user);
+    }
+
+    public User createUser(UserDTO data) {
+        User newUser = new User(data);
+        this.saveUser(newUser);
+        return newUser;
+    }
+
+    public List<User> getAllUsers() {
+        return this.repository.findAll();
     }
 }
