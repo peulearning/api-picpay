@@ -33,10 +33,6 @@ public class Transaction {
 
     private LocalDateTime timestamp;
 
-    public Transaction (){
-
-    }
-
     public void setAmount(BigDecimal value) {
     }
 
@@ -47,5 +43,6 @@ public class Transaction {
     }
 
     public void setTimeStamp(LocalDateTime now) {
+
     }
 }
