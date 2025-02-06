@@ -1,12 +1,15 @@
 package com.picpay_simple.picpaysimple.domain.transaction;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.picpay_simple.picpaysimple.domain.user.User;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity(name = "transactions")
 @Table(name = "transactions")
@@ -16,4 +19,19 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 public class Transaction {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private BigDecimal amount;
+
+    @ManyToOne
+    @JoinColumn(name = "sender_id")
+    private User sender;
+
+    @ManyToOne
+    @JoinColumn(name = "reciever_id")
+    private User reciever;
+
+    private LocalDateTime timestamp;
 }
