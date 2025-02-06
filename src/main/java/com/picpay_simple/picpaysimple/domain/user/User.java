@@ -55,7 +55,7 @@ public class User {
         return balance;
     }
 
-    public void setBalance(BigDecimal subtract) {
+    public BigDecimal setBalance(BigDecimal subtract) {return balance;}
 
-    }
+    public String getEmail() {return email;}
 }
